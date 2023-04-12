@@ -35,6 +35,7 @@ def view_profile(request):
 
 @login_required(login_url='signin')
 def index(request):
+    #showing posts
     user_object = User.objects.get(username=request.user.username)
     user_profile = Profile.objects.get(user=user_object)
 
@@ -82,7 +83,7 @@ def index(request):
 
 @login_required(login_url='signin')
 def upload(request):
-
+    #uploading a post
     if request.method == 'POST':
         user = request.user.username
         image = request.FILES.get('image_upload')
@@ -96,6 +97,7 @@ def upload(request):
         return redirect('/')
 
 @login_required(login_url='signin')
+#Searching for usernames
 def search(request):
     user_object = User.objects.get(username=request.user.username)
     user_profile = Profile.objects.get(user=user_object)
@@ -118,6 +120,7 @@ def search(request):
     return render(request, 'search.html', {'user_profile': user_profile, 'username_profile_list': username_profile_list})
 
 @login_required(login_url='signin')
+#Liking posts
 def like_post(request):
     username = request.user.username
     post_id = request.GET.get('post_id')
@@ -168,6 +171,7 @@ def profile(request, pk):
     return render(request, 'profile.html', context)
 
 @login_required(login_url='signin')
+#Follow and Unfollow
 def follow(request):
     if request.method == 'POST':
         follower = request.POST['follower']

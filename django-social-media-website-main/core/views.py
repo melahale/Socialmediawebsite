@@ -15,7 +15,7 @@ from django.http import JsonResponse
 def view_profile(request):
     user_object = User.objects.get(username=request.user.username)
     user_profile = Profile.objects.get(user=user_object)
-
+    #add posts
     return render(request, 'yourprofile.html', {'user_profile': user_profile})
 
 

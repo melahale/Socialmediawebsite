@@ -15,8 +15,21 @@ from django.http import JsonResponse
 def view_profile(request):
     user_object = User.objects.get(username=request.user.username)
     user_profile = Profile.objects.get(user=user_object)
+    user_posts = Post.objects.filter(user=request.user)
+    user_post_length = len(user_posts)
     #add posts
-    return render(request, 'yourprofile.html', {'user_profile': user_profile})
+    user_followers = len(FollowersCount.objects.filter(user=request.user))
+    user_following = len(FollowersCount.objects.filter(follower=request.user))
+
+    context = {
+        'user_object': user_object,
+        'user_profile': user_profile,
+        'user_posts': user_posts,
+        'user_post_length': user_post_length,
+        'user_followers': user_followers,
+        'user_following': user_following,
+    }
+    return render(request, 'yourprofile.html', context)
 
 
 

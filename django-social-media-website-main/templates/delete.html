@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'assets/images/favicon.png' %}" rel="icon" type="image/png">
+    <title>Delete Profile</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'assets/css/icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/uikit.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/tailwind.css' %}">
+
+</head>
+{% block content %}
+<div class="container d-flex justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow-lg border-0 rounded-lg mt-5 justify-content-center">
+            <div class="card-header"><h3 class="text-center font-weight-light my-4">Delete your account</h3></div>
+            <div class="card-body">
+                <p class="text-center">Are you sure you want to delete your account? This action cannot be undone.</p>
+                <form method="POST" class="d-flex justify-content-center mt-4">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Delete my account</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

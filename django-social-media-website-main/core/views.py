@@ -31,7 +31,15 @@ def view_profile(request):
     }
     return render(request, 'yourprofile.html', context)
 
-
+@login_required
+def delete_profile(request):
+    if request.method == 'POST':
+        user = request.user
+        user.delete()
+        logout(request)
+        messages.success(request, 'Your account has been deleted successfully.')
+        return redirect('signin')
+    return render(request, 'delete.html')
 
 @login_required(login_url='signin')
 def index(request):

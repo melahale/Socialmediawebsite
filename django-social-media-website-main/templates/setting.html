@@ -66,14 +66,18 @@
                        </div> 
     
                        <div class="bg-gray-10 p-6 pt-0 flex justify-end space-x-3">
-                           <button class="p-2 px-4 rounded bg-gray-50 text-red-500"> <a href="/">Cancel</a> </button>
-                           <button type="submit" class="button bg-blue-700"> Save </button>
-                       </div>
-                    </form>
+                        <button class="p-2 px-4 rounded bg-gray-50 text-red-500"> <a href="/">Cancel</a> </button>
+                        <button type="submit" class="button bg-blue-700"> <a href="yourprofile">Save </a></button>
+                        <form action="{delete}" method="post">
+                            {% csrf_token %}
+                            <button class="p-2 px-4 rounded bg-gray-50 text-red-500"> <a href="delete/">Delete Account</a> </button>
+                        </form>
+                    </div>
+                    
     
                     </div>
 
-                    <!-- <div>
+                     <div>
                         <h3 class="text-xl mb-2"> Privacy</h3>
                         <p> </p>
                     </div>
@@ -127,7 +131,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div> -->
+                    </div> 
     
                     </div>
                     <br>

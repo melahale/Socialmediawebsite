@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Profile, Post, LikePost, FollowersCount
 from itertools import chain
 import random
-from django.http import JsonResponse
+
 
 
 # Create your views here.

@@ -242,23 +242,6 @@
                                     <a href="/comment-?post_id={{post.id}}"><strong>{{post.user}}</strong></a> {{post.caption}}
                                 </p>
 
-                                <div class="border-t border-gray-300 pt-3">
-                                    <form method="post" action="{% url 'comment' post.id %}">
-                                        {% csrf_token %}
-                                        <div class="mb-2">
-                                            <textarea name="comment" rows="2" placeholder="Add a comment..." class="w-full p-2 border border-gray-300"></textarea>
-                                        </div>
-                                        <button type="submit" class="bg-blue-500 text-white font-bold py-2 px-4 rounded">Post</button>
-                                    </form>
-                                    {% if post.comments.count > 0 %}
-                                    <div class="mt-4">
-                                        {% for comment in post.comments.all %}
-                                        <p><strong>{{ comment.user.username }}</strong> {{ comment.body }}</p>
-                                        {% endfor %}
-                                    </div>
-                                    {% endif %}
-                                </div>
-                                
 
     
                             </div>

@@ -74,7 +74,7 @@
 						<div class="col-lg-2 col-sm-3">
 							<div class="user-avatar">
 								<figure>
-									<img src="{{user_profile.profileimg.url}}" style="height: 250px; width: 100%;" alt="">
+									<img src="{{user_profile.profileimg.url}}" style="height: 250px; width: 100%; object-fit: cover;" alt="">
 									<!-- <form class="edit-phto">
 										<i class="fa fa-camera-retro"></i>
 										<label class="fileContainer">
@@ -128,7 +128,7 @@
 												{% for post in user_posts %}
 												  <div style="flex-basis: 250px; margin-right: 10px; margin-bottom: 20px;">
 													<a class="strip" href="{{post.image.url}}" title="" data-strip-group="mygroup" data-strip-group-options="loop: false">
-													  <img src="{{post.image.url}}" style="height: 150px; width: 250px; object-fit: cover;" alt="">
+													  <img src="{{post.image.url}}" style="height: 200px; width: 250px; object-fit: cover;" alt="">
 													</a>
 													<p style="margin-top: 10px; text-align: center; font-size: 16px;">{{ post.caption }}</p>
 												  </div>
@@ -138,15 +138,10 @@
 											  <p style="text-align: center;">No posts yet.</p>
 											{% endif %}
 										  </div>
-										  
-									
-										
-										
-										
 									</ul>
-									<!--<div class="lodmore"><button class="btn-view btn-load-more"></button></div>-->
-								</div><!-- photos -->
-							</div><!-- centerl meta -->
+									
+								</div>
+							</div>
 							<div class="col-lg-3">
 								<aside class="sidebar static">
 									
